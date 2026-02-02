@@ -162,7 +162,7 @@ import { PAGAMENTOS } from "@/lib/data";
 export default function PagamentosPage() {
     return (
         <TableGeneric
-            columns={sectionPagamentoColumns}
+            columns={sectionPagamentoColumns()}
             data={PAGAMENTOS}
             title="Pagamentos"
         />
@@ -171,7 +171,7 @@ export default function PagamentosPage() {
 ```
 
 * `PAGAMENTOS` é um array de objetos `Pagamento`.
-* `TableGeneric` renderiza automaticamente todas as colunas definidas.
+* `TableGeneric` renderiza automaticamente todas as colunas definidas e com a possibilidade de passar props em columns.
 
 ---
 
