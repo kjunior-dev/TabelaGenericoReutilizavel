@@ -8,7 +8,7 @@ import {
   TooltipTrigger,
 } from "@/components/atoms/tooltip";
 
-export const sectionPagamentoColumns = (): ColumnDef<Pagamento>[] => [
+export const sectionPagamentoColumns = () : ColumnDef<Pagamento>[] => [
   {
     accessorKey: "estado",
     header: "Estado",
