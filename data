@@ -1,0 +1,114 @@
+export type Pagamento = {
+  id: string;
+  entidade_id: string;
+  estado: "Em análise" | "Concluído";
+  alvara: string;
+  processo: string;
+  valor: string;
+  tipo: string;
+  data_registro: string;
+  data_prev_pag: string;
+  data_pagamento: string;
+  parcela_n: string;
+};
+
+export const PAGAMENTOS: Pagamento[] = [
+  // LABANTA, LDA
+  {
+    id: "1",
+    entidade_id: "1",
+    estado: "Em análise",
+    alvara: "001/2025",
+    processo: "PR-2024-001",
+    valor: "25.000,00",
+    tipo: "Equivalência Académica",
+    data_registro: "2024-01-10",
+    data_prev_pag: "2024-01-10",
+    data_pagamento: "2024-01-10",
+    parcela_n: "1/1",
+  },
+  {
+    id: "2",
+    entidade_id: "1",
+    estado: "Concluído",
+    alvara: "001/2025",
+    processo: "PR-2024-002",
+    valor: "15.000,00",
+    tipo: "Reconhecimento Profissional",
+    data_registro: "2024-01-10",
+    data_prev_pag: "2024-01-10",
+    data_pagamento: "2024-01-10",
+    parcela_n: "1/1",
+  },
+  {
+    id: "3",
+    entidade_id: "1",
+    estado: "Em análise",
+    alvara: "001/2026",
+    processo: "PR-2024-003",
+    valor: "35.000,00",
+    tipo: "Renovação de Alvará",
+    data_registro: "2024-01-10",
+    data_prev_pag: "2024-01-10",
+    data_pagamento: "2024-01-10",
+    parcela_n: "2/3",
+  },
+  // TECNO SOLUTIONS, SA
+  {
+    id: "4",
+    entidade_id: "2",
+    estado: "Concluído",
+    alvara: "012/2024",
+    processo: "PR-2024-015",
+    valor: "50.000,00",
+    tipo: "Licenciamento Inicial",
+    data_registro: "2024-01-10",
+    data_prev_pag: "2024-01-10",
+    data_pagamento: "2024-01-10",
+    parcela_n: "1/1",
+  },
+  {
+    id: "5",
+    entidade_id: "2",
+    estado: "Em análise",
+    alvara: "089/2023",
+    processo: "PR-2024-016",
+    valor: "18.500,00",
+    tipo: "Taxa de Fiscalização",
+    data_registro: "2024-01-10",
+    data_prev_pag: "2024-01-10",
+    data_pagamento: "2024-01-10",
+    parcela_n: "1/2",
+  },
+  // CABO VERDE IMPORTS, LDA
+  {
+    id: "6",
+    entidade_id: "3",
+    estado: "Concluído",
+    alvara: "033/2024",
+    processo: "PR-2024-025",
+    valor: "75.000,00",
+    tipo: "Importação - Licença Anual",
+    data_registro: "2024-01-10",
+    data_prev_pag: "2024-01-10",
+    data_pagamento: "2024-01-10",
+    parcela_n: "1/1",
+  },
+  {
+    id: "7",
+    entidade_id: "3",
+    estado: "Em análise",
+    alvara: "033/2024",
+    processo: "PR-2024-026",
+    valor: "12.500,00",
+    tipo: "Inspeção Sanitária",
+    data_registro: "2024-01-10",
+    data_prev_pag: "2024-01-10",
+    data_pagamento: "2024-01-10",
+    parcela_n: "1/1",
+  },
+];
+
+export function getPagamentosByEntidade(entidadeId: string): Pagamento[] {
+  return PAGAMENTOS.filter((p) => p.entidade_id === entidadeId);
+}
