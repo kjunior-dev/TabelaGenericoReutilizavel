@@ -8,11 +8,7 @@ import {
 } from "@tanstack/react-table";
 import {Card, CardContent, CardHeader, CardTitle} from "@/components/atoms/card";
 
-type TableProps<T> = {
-    columns: ColumnDef<T>[];
-    data: T[];
-    title?: string
-};
+type TableProps<T> = {columns: ColumnDef<T>[], data: T[], title?: string};
 
 export function TableGeneric<T>({ columns, data, title }: TableProps<T>) {
     const table = useReactTable({
@@ -23,7 +19,6 @@ export function TableGeneric<T>({ columns, data, title }: TableProps<T>) {
 
     return (
         <>
-
             <Card>
                 <CardHeader>
                     <CardTitle className="text-lg">{title}</CardTitle>
