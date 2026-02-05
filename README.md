@@ -157,13 +157,14 @@ export const sectionPagamentoColumns: ColumnDef<Pagamento>[] = [ ... ];
 ```tsx
 import { TableGeneric } from "@/components/TableGeneric";
 import { sectionPagamentoColumns } from "@/columns/sectionPagamentoColumns";
-import { PAGAMENTOS } from "@/lib/data";
+import { PAGAMENTOS } from "@./data";
 
 export default function PagamentosPage() {
+    const pagamentos = getPagamentosByEntidade(selectedEntidade);
     return (
         <TableGeneric
             columns={sectionPagamentoColumns()}
-            data={PAGAMENTOS}
+            data={pagamentos}
             title="Pagamentos"
         />
     );
